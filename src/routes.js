@@ -11,48 +11,39 @@ import {
 
 // Admin Imports
 import MainDashboard from 'views/admin/default';
-import NFTMarketplace from 'views/admin/marketplace';
+import Stations from 'views/admin/stations';
+import Parcels from 'views/admin/parcels';
 import Profile from 'views/admin/profile';
-import DataTables from 'views/admin/dataTables';
-import RTL from 'views/admin/rtl';
 
 // Auth Imports
 import SignInCentered from 'views/auth/signIn';
 
 const routes = [
   {
-    name: 'Main Dashboard',
+    name: 'Dashboard',
     layout: '/admin',
     path: '/default',
     icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
     component: <MainDashboard />,
   },
   {
-    name: 'NFT Marketplace',
+    name: 'Parcels & Shipments',
     layout: '/admin',
-    path: '/nft-marketplace',
-    icon: (
-      <Icon
-        as={MdOutlineShoppingCart}
-        width="20px"
-        height="20px"
-        color="inherit"
-      />
-    ),
-    component: <NFTMarketplace />,
-    secondary: true,
+    path: '/parcels',
+    icon: <Icon as={MdOutlineShoppingCart} width="20px" height="20px" color="inherit" />,
+    component: <Parcels />,
   },
   {
-    name: 'Data Tables',
+    name: 'Stations & Lockers',
     layout: '/admin',
     icon: <Icon as={MdBarChart} width="20px" height="20px" color="inherit" />,
-    path: '/data-tables',
-    component: <DataTables />,
+    path: '/stations',
+    component: <Stations />,
   },
   {
-    name: 'Profile',
+    name: 'Customers',
     layout: '/admin',
-    path: '/profile',
+    path: '/customers',
     icon: <Icon as={MdPerson} width="20px" height="20px" color="inherit" />,
     component: <Profile />,
   },
@@ -62,14 +53,7 @@ const routes = [
     path: '/sign-in',
     icon: <Icon as={MdLock} width="20px" height="20px" color="inherit" />,
     component: <SignInCentered />,
-  },
-  {
-    name: 'RTL Admin',
-    layout: '/rtl',
-    path: '/rtl-default',
-    icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
-    component: <RTL />,
-  },
+  }
 ];
 
 export default routes;
