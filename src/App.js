@@ -3,7 +3,9 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import {} from 'react-router-dom';
 import AuthLayout from './layouts/auth';
 import AdminLayout from './layouts/admin';
-import RTLLayout from './layouts/rtl';
+import KioskLayout from './layouts/kiosk';
+import MobileLayout from './layouts/mobile';
+import DriverLayout from './layouts/driver';
 import {
   ChakraProvider,
   // extendTheme
@@ -26,10 +28,16 @@ export default function Main() {
           }
         />
         <Route
-          path="rtl/*"
-          element={
-            <RTLLayout theme={currentTheme} setTheme={setCurrentTheme} />
-          }
+          path="kiosk/*"
+          element={<KioskLayout />}
+        />
+        <Route
+          path="mobile/*"
+          element={<MobileLayout />}
+        />
+        <Route
+          path="driver/*"
+          element={<DriverLayout />}
         />
         <Route path="/" element={<Navigate to="/admin" replace />} />
       </Routes>
